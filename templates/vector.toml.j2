@@ -13,7 +13,7 @@ ignore_older_secs = 600
 include = [ "{{ vector_test_dir }}/*.log" ]
 read_from = "beginning"
 
-[sinks.docker_clickhouse]
+[sinks.clickhouse]
 type = "clickhouse"
 inputs = [ "test_log" ]
 database = "logs"
