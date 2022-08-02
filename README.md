@@ -14,6 +14,11 @@ Vector-role
 
 - **clickhosue_port**: - Порт Clickhouse для выгрузки метрики.
 
+- **clickhosue_user**: - Пользователь Clickhouse с правами на запись.
+
+- **clickhosue_password**: - Пароль авторизуемого пользователя Clickhouse.
+
+
 Пример использования
 --------------------
 
@@ -23,7 +28,7 @@ Vector-role
   become: true
   vars:
     vector_test_dir: "/home/centos/test"
-    clickhouse_host: groups['clickhouse'][0]
+    clickhouse_host: hostvars['clickhouse']['ansible_host']
   roles:
     - vector_role
 ```

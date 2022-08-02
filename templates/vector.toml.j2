@@ -20,5 +20,5 @@ database = "logs"
 endpoint = "http://{{ clickhouse_host }}:{{ clickhouse_port }}"
 table = "file_log"
 compression = "gzip"
-auth = { user = "logger", password = "logger", strategy = "basic" }
+auth = { user = "{{ clickhouse_user }}", password = "{{ clickhouse_password }}", strategy = "basic" }
 skip_unknown_fields = true
