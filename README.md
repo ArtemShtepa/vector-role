@@ -27,7 +27,7 @@ Vector-role
   hosts: vector
   become: true
   vars:
-    vector_test_dir: "/home/centos/test"
+    vector_test_dir: "/var/log/test"
     clickhouse_host: hostvars['clickhouse']['ansible_host']
   roles:
     - vector_role
