@@ -7,15 +7,12 @@ driver:
     D: true
     vv: true
 platforms:
-#  - name: centos7
-#    image: docker.io/pycontribs/centos:7
-#    pre_build_image: true
-#  - name: centos8
-#    image: docker.io/pycontribs/centos:8
-#    pre_build_image: true
-#  - name: alpine
-#    image: docker.io/pycontribs/alpine:latest
-#    pre_build_image: true
+  - name: centos7
+    image: docker.io/pycontribs/centos:7
+    pre_build_image: true
+  - name: centos8
+    image: docker.io/pycontribs/centos:8
+    pre_build_image: true
   - name: ubuntu
     image: docker.io/pycontribs/ubuntu:latest
     pre_build_image: true
@@ -24,5 +21,9 @@ provisioner:
   options:
     D: true
     vv: true
+  playbooks:
+    converge: ../resources/converge.yml
+    verify: ../resources/verify.yml
 verifier:
   name: ansible
+...
